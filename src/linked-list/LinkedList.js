@@ -111,6 +111,25 @@ export default class LinkedList {
     return this;
   }
 
+  deleteTail() {
+    if (!this.head) return null;
+    let currentNode = this.head;
+    let deletedTail = null;
+    while (currentNode) {
+      // next 가 tail 과 같다면...
+      if (currentNode.next === this.tail) {
+        // 우선 연결을 끝는다.
+        currentNode.next = null;
+        // 반환할 tail 을 담아둔다.
+        deletedTail = this.tail;
+        this.tail = currentNode;
+        return deletedTail;
+      }
+      currentNode = currentNode.next;
+    }
+    return null;
+  }
+
   deleteHead() {
     if (!this.head) return null;
 
@@ -154,6 +173,25 @@ export default class LinkedList {
     }
 
     return deleteNode;
+  }
+
+  find({ value = undefined, callback = undefined }) {
+    if (!this.head) return null;
+    let currentNode = this.head;
+
+    while (currentNode) {
+      if (callback && callback(currentNode.value)) {
+        return currentNode;
+      }
+
+      if (value !== undefined && this.compare.equal(currentNode.value, value)) {
+        return currentNode;
+      }
+
+      currentNode = currentNode.next;
+    }
+
+    return null;
   }
 
   values() {

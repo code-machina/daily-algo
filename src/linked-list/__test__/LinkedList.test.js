@@ -85,7 +85,28 @@ describe('LinkedList', () => {
     expect(linkedList.values()).not.toContain(1);
     expect(deletedNode.value).toBe(1);
   });
-  it('should return ordered data', () => {
-    
+  it('should return tail node then to-be-tail-node should be right before tail node', () => {
+    const values = [...Array(7).keys()].slice(1);
+    linkedList.fromArray(values);
+    const deletedNode = linkedList.deleteTail();
+    expect(deletedNode.value).toBe(6);
+    expect(linkedList.tail.value).toBe(5);
+  });
+  it('should find an exact node where we provide a specific value', () => {
+    const values = [...Array(7).keys()].slice(1);
+    linkedList.fromArray(values);
+    const foundNode = linkedList.find({ value: 5 });
+    expect(foundNode.value).toBe(5);
+  });
+  it('should find an exact node where we provide a specific condition', () => {
+    const values = [...Array(7).keys()].slice(1);
+    linkedList.fromArray(values);
+    const foundNode = linkedList.find({
+      callback: (x) => {
+        if (x === 5) return x;
+        return null;
+      },
+    });
+    expect(foundNode.value).toBe(5);
   });
 });
