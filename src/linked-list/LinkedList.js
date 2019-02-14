@@ -26,6 +26,10 @@ export default class LinkedList {
     return this;
   }
 
+  /**
+   * @param {*} value
+   * @return {LinkList}
+   */
   prepend(value) {
     const v = new LinkNode(value, this.head);
     if (!this.head) {
@@ -33,12 +37,59 @@ export default class LinkedList {
     } else {
       this.head = v;
     }
-
     return this;
+  }
+
+  /**
+   * @param {*} value
+   */
+  search(value) {
+    if (!this.head) return null;
+    let currentNode = this.head;
+
+    while (currentNode) {
+      if (currentNode.value === value) {
+        break;
+      }
+      currentNode = currentNode.next;
+    }
+    return currentNode;
   }
 
   toString(callback) {
     return this.toArray().map(n => n.toString(callback)).toString();
+  }
+
+  reverse() {
+    /**
+     * reverse 는 다른 소스를 참고하였다.
+     * 테이블을 그려가며 알고리즘을 설계하는 연습을 해본다.
+     */
+    let currNode = this.head;
+    let prevNode = null;
+    // eslint-disable-next-line no-unused-vars
+    let nextNode = null;
+
+    while (currNode !== null) {
+      nextNode = currNode.next;
+      currNode.next = prevNode;
+      prevNode = currNode;
+      currNode = nextNode;
+    }
+    // while (nextNode !== this.tail) {
+    //   prevNode = currNode;
+    //   currNode = currNode.next;
+    //   nextNode = currNode.next;
+    //   console.log(currNode.value);
+    //   currNode.next = prevNode;
+    // }
+    // swap this.head and this.tail
+    // const tmp = this.head;
+    // this.head = this.tail;
+    this.tail = this.head;
+    this.head = prevNode;
+
+    return this;
   }
 
   /**
@@ -53,6 +104,24 @@ export default class LinkedList {
     }
 
     return nodes;
+  }
+
+  fromArray(values) {
+    values.forEach(value => this.append(value));
+    return this;
+  }
+
+  deleteHead() {
+    if (!this.head) return null;
+
+    const deletedNode = this.head;
+    if (this.head.next) {
+      this.head = this.head.next;
+    } else {
+      this.head = null;
+      this.tail = null;
+    }
+    return deletedNode;
   }
 
   /**

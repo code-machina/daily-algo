@@ -61,4 +61,31 @@ describe('LinkedList', () => {
     expect(deletedNode.value).toBe(2);
     expect(linkedList.values()).toContain(2);
   });
+  it('should return a specific node if input is matched with Node\'s value', () => {
+    const values = [...Array(7).keys()].slice(1);
+    values.push(2);
+    values.forEach(x => linkedList.append(x));
+    const node = linkedList.search(5);
+    expect(node.value).toBe(5);
+  });
+  it('should return reverse ordered linkedlist', () => {
+    const values = [...Array(7).keys()].slice(1);
+    values.forEach(x => linkedList.append(x));
+    const list = linkedList.reverse();
+    // toEqual 문은 배열의 순서 일치 여부도 확인한다.
+    expect(list.values()).toEqual([6, 5, 4, 3, 2, 1]);
+    // expect(list.values()).toEqual([...Array(7).keys()].slice(1));
+  });
+  it('should return head node if head node exist', () => {
+    const values = [...Array(7).keys()].slice(1);
+    linkedList.fromArray(values);
+    const deletedNode = linkedList.deleteHead();
+
+    expect(linkedList.toArray().length).toBe(5);
+    expect(linkedList.values()).not.toContain(1);
+    expect(deletedNode.value).toBe(1);
+  });
+  it('should return ordered data', () => {
+    
+  });
 });
