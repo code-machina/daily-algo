@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/dlinked-list/DLinkedList.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/dlinked-list</a> DLinkedList.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">92.47% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>86/93</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">85.71% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>36/42</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>8/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.73% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>86/88</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import DLinkNode from './DLinkNode';
+import Comparator from '../Comparator';
+&nbsp;
+/**
+ * 아름다운 코드를 마음을 안정 시킨다.
+ */
+&nbsp;
+export default class DLinkedList {
+  constructor(comparatorFunction) {
+    this.head = null;
+    this.tail = null;
+    this.compare = new Comparator(comparatorFunction);
+  }
+&nbsp;
+  swapHeadAndTail() {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.head) <span class="cstat-no" title="statement not covered" >return this;</span>
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.head === this.tail) <span class="cstat-no" title="statement not covered" >return this;</span>
+    // head 와 tail 의 위치를 바꾼다.
+    const nextNode = this.head.next;
+    const prevNode = this.tail.prev;
+&nbsp;
+    // head 와 tail 의 next, prev 를 각각 바꾼다.
+    this.tail.next = this.head.next;
+    this.head.next = null;
+    this.head.prev = this.tail.prev;
+    this.tail.prev = null;
+    const swap = this.tail;
+    this.tail = this.head;
+    this.head = swap;
+&nbsp;
+    nextNode.prev = this.head;
+    prevNode.next = this.tail;
+    return this;
+  }
+&nbsp;
+  find({ value = undefined, callback = undefined }) {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.head) <span class="cstat-no" title="statement not covered" >return null;</span>
+    let currentNode = this.head;
+    while (currentNode) {
+      if (callback &amp;&amp; callback(currentNode.value)) {
+        return currentNode;
+      }
+      if (value &amp;&amp; this.compare.equal(currentNode.value, value)) {
+        return currentNode;
+      }
+      currentNode = currentNode.next;
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  }
+&nbsp;
+  /**
+   * @return {DLinkedList}
+   */
+  reverse() {
+    // 순서를 뒤바꾼다.
+    // head 가 null 이거나 head == tail 인 경우 연산하지 않는다.
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.head || this.head === this.tail) <span class="cstat-no" title="statement not covered" >return this;</span>
+&nbsp;
+    // this.swapHeadAndTail();
+&nbsp;
+    let currentNode = this.tail;
+    while (currentNode) {
+      const prevNode = currentNode.prev;
+      const nextNode = currentNode.next;
+      currentNode.prev = nextNode;
+      currentNode.next = prevNode;
+      currentNode = prevNode;
+    }
+    const swap = this.head;
+    this.head = this.tail;
+    this.tail = swap;
+    return this;
+  }
+&nbsp;
+  /**
+   * 리스트의 앞에 노드가 생성된다.
+   * @param {*} value
+   * @return {DLinkNode}
+   */
+  prepend(value) {
+    const node = new DLinkNode(value);
+    // 리스트의 길이가 0 인 경우 head 에 노드를 할당
+    if (!this.head) {
+      this.head = node;
+      this.tail = this.head;
+      return this;
+    }
+    // 그 외의 경우
+    this.head.prev = node;
+    node.next = this.head;
+    node.prev = null;
+    this.head = node;
+    return this;
+  }
+&nbsp;
+  /**
+   * @param {*} value
+   * @return {DLinkNode}
+   */
+  append(value) {
+    const node = new DLinkNode(value, null, null);
+    // head 가 null 인 경우
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+      return this;
+    }
+    node.prev = this.tail;
+    this.tail.next = node;
+    this.tail = node;
+    return this;
+  }
+&nbsp;
+  delete(value) {
+    // 만약 this.head 가 null 이라면 리스트에 데이터가 없는 경우
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.head) <span class="cstat-no" title="statement not covered" >return null;</span>
+    let currentNode = this.head;
+    while (currentNode) {
+      if (this.compare.equal(currentNode.value, value)) {
+        // 삭제할 노드가 head 인 경우
+        if (this.head &amp;&amp; currentNode === this.head) {
+          if (currentNode.next) {
+            // 다음 노드가 존재하는 경우
+            this.head = currentNode.next;
+            this.head.prev = null;
+            return currentNode;
+          }
+          // 다음 노드가 존재하지 않는 경우
+          // if (this.head === this.tail ) {
+          // 노드가 1개 인 경우이다.
+          this.head = null;
+          this.tail = null;
+          return currentNode;
+          // }
+        }
+        // 노드가 2개 이상이고 tail 을 삭제할 경우
+        if (this.tail &amp;&amp; this.tail === currentNode) {
+          const prevNode = this.tail.prev;
+          this.tail = prevNode;
+          this.tail.next = null;
+          return currentNode;
+        }
+&nbsp;
+        // 삭제할 노드가 중간에 위치하는 경우 즉, 노드가 3개 이상인 경우
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (this.tail !== currentNode &amp;&amp; this.head !== currentNode) {
+          const prevNode = currentNode.prev;
+          const nextNode = currentNode.next;
+          prevNode.next = currentNode.next;
+          nextNode.prev = prevNode;
+          return currentNode;
+        }
+      }
+      // 다음 노드로 순환 한다.
+      currentNode = currentNode.next;
+    }
+    // 찾아낸 값이 없는 경우 null 을 리턴한다.
+<span class="cstat-no" title="statement not covered" >    return null;</span>
+  }
+&nbsp;
+  toArray() {
+    const result = [];
+    let currentNode = this.head;
+    while (currentNode) {
+      result.push(currentNode.value);
+      currentNode = currentNode.next;
+    }
+    return result;
+  }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Feb 16 2019 04:48:03 GMT+0900 (GMT+09:00)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
